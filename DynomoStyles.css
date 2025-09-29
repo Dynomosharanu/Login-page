@@ -1,0 +1,216 @@
+/* Basic Reset and Font Import */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Light background for the whole page */
+}
+
+/* --- Container Layout --- */
+.login-container {
+    display: flex;
+    width: 80%; /* Adjust as needed */
+    max-width: 1000px; /* Max size of the whole card */
+    min-height: 600px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Important for the border-radius to apply to the panels */
+}
+
+/* --- Left Panel: Welcome and Background --- */
+.welcome-panel {
+    flex: 1; /* Takes up 50% width */
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+
+    /* Complex Gradient Background & Overlays */
+    /* This simulates the vibrant purple-to-blue gradient */
+    background: linear-gradient(135deg, #4F00BC, #00A6FF);
+    /* Adding a stylized background that mimics the image's abstract shapes */
+    position: relative;
+    z-index: 1; /* To keep content above the pseudo-elements */
+}
+
+/* Pseudo-elements for the abstract shapes and colors */
+.welcome-panel::before,
+.welcome-panel::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%; /* Circles */
+    opacity: 0.4;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.welcome-panel::before {
+    top: 10%;
+    left: -20%;
+    width: 250px;
+    height: 250px;
+    background-color: #00A6FF; /* Bright Blue */
+}
+
+.welcome-panel::after {
+    bottom: 5%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background-color: #FF00FF; /* Magenta */
+}
+
+.welcome-content {
+    margin-top: 100px; /* Space from the top */
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.welcome-subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+.website-link {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+/* --- Right Panel: Login Form --- */
+.login-form-panel {
+    flex: 1; /* Takes up 50% width */
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: -5px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #8A2BE2; /* Similar purple from the image */
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+/* --- Form Styling --- */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1rem;
+    outline: none;
+    transition: border-bottom-color 0.3s;
+}
+
+.input-group input:focus {
+    border-bottom-color: #8A2BE2; /* Change border color on focus */
+}
+
+/* This is a simple version of the gradient border from the image */
+#email {
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, #00A6FF, #4F00BC) 1;
+}
+
+/* --- Options Group (Remember Me / Forgot Password) --- */
+.options-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 5px;
+    accent-color: #8A2BE2; /* Changes the checkbox color */
+}
+
+.forgot-password {
+    text-decoration: none;
+    color: #8A2BE2;
+    font-weight: 500;
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    
+    /* Gradient Button Style */
+    background: linear-gradient(to right, #4F00BC, #00A6FF);
+    box-shadow: 0 4px 10px rgba(79, 0, 188, 0.3);
+    transition: transform 0.2s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* --- Create Account Link --- */
+.create-account-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.create-account-link a {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+}
